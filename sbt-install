@@ -5,6 +5,24 @@ die () {
     exit 1    
 }
 
+print_usage () {
+    read -d '' USAGE << EOF
+Usage:
+  sbt-install [options] VERSION
+
+OPTIONS:
+  -d                Directory sbt will be installed
+  --xms             Minimum heap size
+  --xmx             Maximum heap size
+  --xss             Thread stack size
+  --max-perm-size   Maximum Perm size
+  --ivy-home        Set sbt.ivy.home
+  --help            show this message
+
+EOF
+
+    echo "$USAGE"
+}
 
 INSTALL_DIR=$HOME/bin
 SBT_IVY_HOME=$HOME/.ivy2
@@ -45,8 +63,11 @@ while [[ $# -gt 0 ]]; do
             shift
             shift
             ;;
+        --help)
+            print_usage
+            exit 0
+            ;;
         *)
-            echo "$@"
             VERSION=$1
             shift
             ;;
