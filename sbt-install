@@ -89,8 +89,15 @@ fi
 
 TYPESAFE_REPO=http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/sbt-launch
 JAR_URL=$TYPESAFE_REPO/${VERSION}/sbt-launch.jar
+JAR=sbt-launch-${VERSION}.jar
 
-wget -O sbt-launch-${VERSION}.jar $JAR_URL
+echo "Downloading $JAR"
+
+curl -f -o $JAR $JAR_URL  
+if [ $? -ne 0 ]; then
+    rm $JAR
+    die "ERROR: $JAR not found"
+fi
 
 read -d '' SCRIPT <<EOF
 #!/bin/sh
