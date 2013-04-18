@@ -81,7 +81,7 @@ mkdir $INSTALL_DIR > /dev/null 2>&1
 cd $INSTALL_DIR
 
 if [ -f $INSTALL_DIR/sbt ]; then
-    read -p "$BIN/sbt already exists. Overwrite? [y/n]" -n 1 -r
+    read -p "$INSTALL_DIR/sbt already exists. Overwrite? [y/n]" -n 1 -r
     if [[ $REPLY =~ ^[Nn]$ ]]; then
         exit 0
     fi
