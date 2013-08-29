@@ -10,11 +10,11 @@ curl https://raw.github.com/tototoshi/sbt-install/master/sbt-install > ~/bin/sbt
 
 Installing sbt in $HOME/bin
 ```
-$ sbt-install 0.12.3
+$ sbt-install 0.13.0
 ```
 
 Installing sbt in the current directory
 ```
-$ sbt-install -d . 0.12.3
+$ sbt-install -d . 0.13.0
 ```
 
