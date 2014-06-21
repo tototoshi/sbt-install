@@ -3,7 +3,7 @@
 ## Install
 
 ```
-curl https://raw.github.com/tototoshi/sbt-install/master/sbt-install > ~/bin/sbt-install && chmod 0755 !#:3
+curl https://raw.githubusercontent.com/tototoshi/sbt-install/master/sbt-install > ~/bin/sbt-install && chmod 0755 !#:3
 ```
 
 ## Usage
