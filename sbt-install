@@ -101,7 +101,7 @@ fi
 
 read -d '' SCRIPT <<EOF
 #!/bin/sh
-java -Xms${XMS} -Xmx${XMX} -Xss${XSS} -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=${MAX_PERM_SIZE} -Dsbt.ivy.home=${SBT_IVY_HOME} -jar \`dirname \$0\`/sbt-launch-${VERSION}.jar "\$@"
+java -Dfile.encoding=utf-8 -Xms${XMS} -Xmx${XMX} -Xss${XSS} -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=${MAX_PERM_SIZE} -Dsbt.ivy.home=${SBT_IVY_HOME} -jar \`dirname \$0\`/sbt-launch-${VERSION}.jar "\$@"
 EOF
 echo "$SCRIPT" > sbt
 
