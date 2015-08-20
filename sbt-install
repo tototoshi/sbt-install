@@ -91,7 +91,7 @@ TYPESAFE_REPO=http://dl.bintray.com/typesafe/ivy-releases/org.scala-sbt/sbt-laun
 JAR_URL=$TYPESAFE_REPO/${VERSION}/sbt-launch.jar
 JAR=sbt-launch-${VERSION}.jar
 
-echo "Downloading $JAR"
+echo "Downloading $JAR from $JAR_URL"
 
 curl -L -f -o $JAR $JAR_URL
 if [ $? -ne 0 ]; then
