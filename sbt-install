@@ -87,7 +87,7 @@ if [ -f $INSTALL_DIR/sbt ]; then
     fi
 fi
 
-TYPESAFE_REPO=http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/sbt-launch
+TYPESAFE_REPO=http://dl.bintray.com/typesafe/ivy-releases/org.scala-sbt/sbt-launch
 JAR_URL=$TYPESAFE_REPO/${VERSION}/sbt-launch.jar
 JAR=sbt-launch-${VERSION}.jar
 
