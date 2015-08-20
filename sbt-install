@@ -93,7 +93,7 @@ JAR=sbt-launch-${VERSION}.jar
 
 echo "Downloading $JAR"
 
-curl -f -o $JAR $JAR_URL  
+curl -L -f -o $JAR $JAR_URL
 if [ $? -ne 0 ]; then
     rm $JAR
     die "ERROR: $JAR not found"
