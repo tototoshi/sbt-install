@@ -15,7 +15,6 @@ OPTIONS:
   --xms             Minimum heap size
   --xmx             Maximum heap size
   --xss             Thread stack size
-  --max-perm-size   Maximum Perm size
   --ivy-home        Set sbt.ivy.home
   --help            show this message
 
@@ -29,7 +28,6 @@ SBT_IVY_HOME='${HOME}/.ivy2'
 XMS=512M
 XMX=1536M
 XSS=1M
-MAX_PERM_SIZE=384M
 
 while [ "$#" -gt 0 ]; do
     case "$1" in
@@ -55,11 +53,6 @@ while [ "$#" -gt 0 ]; do
             ;;
         --xss)
             XSS=$2
-            shift
-            shift
-            ;;
-        --max-perm-size)
-            MAX_PERM_SIZE=$2
             shift
             shift
             ;;
@@ -101,7 +94,7 @@ fi
 
 read -d '' SCRIPT <<EOF
 #!/bin/sh
-java -Dfile.encoding=utf-8 -Xms${XMS} -Xmx${XMX} -Xss${XSS} -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=${MAX_PERM_SIZE} -Dsbt.ivy.home=${SBT_IVY_HOME} -jar \`dirname \$0\`/sbt-launch-${VERSION}.jar "\$@"
+java -Dfile.encoding=utf-8 -Xms${XMS} -Xmx${XMX} -Xss${XSS} -XX:+CMSClassUnloadingEnabled -Dsbt.ivy.home=${SBT_IVY_HOME} -jar \`dirname \$0\`/sbt-launch-${VERSION}.jar "\$@"
 EOF
 echo "$SCRIPT" > sbt
 
